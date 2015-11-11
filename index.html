@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="searchApp">
+  <head>
+    <title>Supplyhub Challenge 2</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/ng-table.js"></script>
+    <script src="scripts/SearchApp.js"></script>
+  </head>
+  <body>
+    <div ng-controller="SearchController as search">
+      <label>Search:</label>
+      <input type="text" ng-model="query" ng-change="runSearch()" placeholder="Search" />
+      <h3>Results ({{results.length}}) for "{{query}}":</h3>
+      <div>
+        <table ng-table="search.tableParams" show-filter="true" class="results" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tr ng-repeat="info in $data">
+            <td>{{info.product.name}}</td>
+            <td>
+              <img ng-if="info.product.photo" ng-src="{{info.product.photo}}" class="product-image" />
+              <div ng-if="!info.product.photo">No Image Available</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,12 @@
+.results td {
+  padding: 7px 5px;
+  border: 1px solid #000;
+  margin: 0;
+}
+
+
+
+.product-image {
+  width: 200px;
+  height: 150px;
+}
