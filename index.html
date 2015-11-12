@@ -2,30 +2,31 @@
 <html ng-app="searchApp">
   <head>
     <title>Supplyhub Challenge 2</title>
+    <link rel="stylesheet" href="css/ng-table.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/ng-table.js"></script>
     <script src="scripts/SearchApp.js"></script>
   </head>
   <body>
-    <div ng-controller="SearchController as search">
-      <label>Search:</label>
-      <input type="text" ng-model="query" ng-change="runSearch()" placeholder="Search" />
-      <h3>Results ({{results.length}}) for "{{query}}":</h3>
-      <div>
+    <div ng-controller="SearchController as search" class="search-controller">
+      <label>Search:</label> <input type="text" ng-model="query" ng-change="runSearch()" placeholder="Search" />
+      <h3>Results ({{getViewDescription()}}) for "{{query}}":</h3>
+      <div class="">
         <table ng-table="search.tableParams" show-filter="true" class="results" cellspacing="0">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Image</th>
+              <th>Item</th>
+              <th>Description</th>
             </tr>
           </thead>
-          <tr ng-repeat="info in $data">
-            <td>{{info.product.name}}</td>
+          <tr ng-repeat="info in $data" class="product">
             <td>
+              <p class="name">{{info.product.name}}</p>
               <img ng-if="info.product.photo" ng-src="{{info.product.photo}}" class="product-image" />
               <div ng-if="!info.product.photo">No Image Available</div>
             </td>
+            <td class="description">{{info.product.fulltechDesc}}</td>
           </tr>
         </table>
       </div>

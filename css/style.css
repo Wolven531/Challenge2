@@ -1,10 +1,67 @@
+body {
+  background-color: #bbb;
+}
+
+.search-controller {
+  margin: 0 auto;
+  text-align: center;
+  width: 600px;
+  background-color: #eee;
+  padding: 10px;
+}
+
+.ng-table {
+  min-width: 600px;
+}
+
+.product .description {
+  text-align: left;
+  text-indent: 15px;
+}
+
+.product .name {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
 .results td {
   padding: 7px 5px;
   border: 1px solid #000;
   margin: 0;
 }
 
+.ng-table-pagination {
+  list-style-type: none;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+}
 
+.ng-table-pagination li {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 2px 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+.ng-table-pagination li.active a {
+  text-decoration: none;
+  color: #333;
+  cursor: default;
+}
+
+.ng-table-pager {
+  margin-top: 20px;
+}
+
+.ng-table-pagination {
+  margin-top: 10px;
+}
 
 .product-image {
   width: 200px;
