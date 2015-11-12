@@ -10,6 +10,7 @@
   </head>
   <body>
     <div ng-controller="SearchController as search" class="search-controller">
+       <h1>Product Search</h1>
       <label>Search:</label> <input type="text" ng-model="query" ng-change="runSearch()" placeholder="Search" />
       <h3>{{getViewDescription()}} results for "{{query}}"</h3>
       <div class="">
